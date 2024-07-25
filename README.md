@@ -64,3 +64,69 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Employee Management API
+
+This project is a simple employee management system built with Laravel. It includes CRUD operations and the ability to approve or reject employee statuses.
+
+## Project Setup Instructions
+
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd employee-management
+    ```
+
+2. Install dependencies:
+    ```bash
+    composer install
+    ```
+
+3. Set up the environment:
+    ```bash
+    cp .env.example .env
+    ```
+    Update the `.env` file with your database credentials and API key:
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=employee_management
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+    X_API_KEY=oi345oi3f4g893f49j3489j3f493f4n
+    ```
+
+4. Run migrations:
+    ```bash
+    php artisan migrate
+    ```
+
+5. Serve the application:
+    ```bash
+    php artisan serve
+    ```
+
+## API Endpoints
+
+- **GET /api/employees**: Retrieve all employees
+- **GET /api/employees/{employee}**: Retrieve a single employee by ID
+- **POST /api/employees**: Create a new employee
+- **PUT /api/employees/{employee}**: Update an existing employee
+- **DELETE /api/employees/{employee}**: Delete an employee
+- **PUT /api/employees/{employee}/status**: Update an employee's status
+
+### Request Headers
+
+All API requests must include the `x-api-key` header with a valid API key. The API key is defined in your `.env` file.
+
+### Example Requests
+
+#### Retrieve All Employees
+
+```bash
+curl -X GET \
+  -H "x-api-key: oi345oi3f4g893f49j3489j3f493f4n" \
+  http://localhost:8000/api/employees
+
