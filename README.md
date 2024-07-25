@@ -91,7 +91,7 @@ This project is a simple employee management system built with Laravel. It inclu
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
-    DB_DATABASE=employee_management
+    DB_DATABASE=emp_manage
     DB_USERNAME=root
     DB_PASSWORD=
 
